@@ -1,0 +1,115 @@
+CREATE TABLE Students (
+StudentID INT PRIMARY KEY,
+Name VARCHAR(50),
+Age INT,
+Department VARCHAR(50),
+GPA DECIMAL(3,2)
+);
+
+
+INSERT INTO Students ( StudentID, Name, Age, Department, GPA)
+VALUES
+(1, 'Ayesha Rahman', 20, 'CSE', 3.75),
+(2, 'Najnin Sutana', 23, 'EEE', 3.50); 
+
+SELECT * FROM `students` WHERE 1 
+
+
+CREATE TABLE Customers (
+CustomerID INT PRIMARY KEY,
+Customer_Name VARCHAR(50),
+Contact_Name VARCHAR(50),
+Address VARCHAR(50),
+City VARCHAR(50),
+PostalCode VARCHAR(50),
+Country VARCHAR(50)
+); 
+
+INSERT INTO Customers (CustomerID, Customer_Name, Contact_Name, Address, City, PostalCode, Country)
+VALUES
+(3, 'Antonio', 'Antonio', 'Ajampur', 'Uttara', '1230', 'Dubai');
+
+SELECT DISTINCT Country FROM customers; 
+
+
+SELECT Country FROM customers;  
+
+SELECT * FROM `customers` WHERE  Country = 'Bangladesh'; 
+
+
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT, 
+    OrderDate VARCHAR(50),
+    );
+
+INSERT INTO orders(OrderID, CustomerID, OrderDate)
+VALUES
+(10308, 2, '1996-09-18'),
+(10309, 37, '1996-09-19'),
+(10310, 77, '1996-09-20'); 
+
+
+CREATE TABLE customers(
+    CustomerID INT PRIMARY KEY,
+    CustomerName VARCHAR(50),
+    ContactName VARCHAR(50),
+    Country VARCHAR(50)); 
+
+INSERT INTO customers1(CustomerID, CustomerName, ContactName, Country)
+VALUES
+(1, 'Alfreds', 'Maria', 'Germany'),
+(2, 'Ana', 'Ana', 'Mexico'),
+(3, 'Antonio', 'Antonio', 'Mexico'); 
+
+
+SELECT orders.OrderID, customers1.CustomerName, orders.OrderDate
+FROM orders
+INNER JOIN customers1 ON orders.CustomerID=customers1.CustomerID; 
+
+SELECT orders.OrderID,
+customers1.CustomerName,
+orders.OrderDate,
+customers1.Country
+FROM orders
+LEFT JOIN customers1
+ON orders.CustomerID = customers1.CustomerID; 
+
+SELECT orders.OrderID,
+customers1.CustomerName,
+orders.OrderDate,
+customers1.Country
+FROM orders
+RIGHT JOIN customers1
+ON orders.CustomerID = customers1.CustomerID; 
+
+
+INSERT INTO orders(OrderID, CustomerID, OrderDate)
+VALUES
+(10311, 3, '1996-09-21');  
+
+
+SELECT orders.OrderID, 
+       customers1.CustomerName, 
+       orders.OrderDate
+FROM orders
+INNER JOIN customers1 
+ON orders.CustomerID=customers1.CustomerID; 
+SELECT * FROM `customers1` WHERE  Country = 'Mexico'; 
+
+
+SELECT *
+FROM Orders
+JOIN Customers
+ON Orders.CustomerID = Customers.CustomerID;
+
+
+
+
+
+
+SELECT DISTINCT Country FROM customers
+
+
+
+
